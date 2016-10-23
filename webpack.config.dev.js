@@ -3,25 +3,25 @@ import path from 'path';
 
 export default {
   debug: true,
-  devtool: 'cheap-module-eval-source-map', //sourcemap, there are many other options to use, check webpack doc
-  noInfo: false, //webpack will list all the files that are bundling
+  devtool: 'cheap-module-eval-source-map',
+  noInfo: false,
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
-    './src/index' //this has to be last
+    './src/index'
   ],
-  target: 'web', //could be 'node' for node project
+  target: 'web',
   output: {
-    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`. This is 
+    path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
-    filename: 'index.js'
+    filename: 'bundle.js'
   },
   devServer: {
-    contentBase: './src' //where the code is
+    contentBase: './src'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(), 
-    new webpack.NoErrorsPlugin() //show error message in browser
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [

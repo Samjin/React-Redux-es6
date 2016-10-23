@@ -1,4 +1,3 @@
-/* set up express server as middleware */
 import express from 'express';
 import webpack from 'webpack';
 import path from 'path';
@@ -7,7 +6,7 @@ import open from 'open';
 
 /* eslint-disable no-console */
 
-const port = 8000;
+const port = 3000;
 const app = express();
 const compiler = webpack(config);
 

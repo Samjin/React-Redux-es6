@@ -1,21 +1,16 @@
 {
-  "name": "react-redux",
+  "name": "react-redux-es6",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "script": {
-    "start": "babel-node tools/srcServer.js"
+  "scripts": {
+    "prestart": "babel-node tools/startMessage.js",
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Samjin/React-Redux-es6.git"
-  },
-  "author": "Sam Jin",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Samjin/React-Redux-es6/issues"
-  },
-  "homepage": "https://github.com/Samjin/React-Redux-es6#readme",
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
@@ -67,5 +62,15 @@
     "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samjin/React-Redux-es6.git"
+  },
+  "author": "Sam Jin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samjin/React-Redux-es6/issues"
+  },
+  "homepage": "https://github.com/Samjin/React-Redux-es6#readme"
 }

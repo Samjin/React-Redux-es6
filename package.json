@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "script": {
+    "start": "babel-node tools/srcServer.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Samjin/React-Redux-es6.git"

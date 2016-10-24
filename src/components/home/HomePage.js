@@ -1,9 +1,9 @@
 import React from 'react';
-import {link} from 'react-router'; //import link component from react-router
+import {Link} from 'react-router'; //import link component from react-router
 
 // class is used because hot reloading feature requires top level component to be class
 // class is not stateless component
-classs HomePage extends React.Component {
+class HomePage extends React.Component {
     render() {
         return (
             <div className='jumbotron'>
